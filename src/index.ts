@@ -21,8 +21,7 @@ async function createServer() {
 	await app.register(IO);
 
 	app.addHook("onClose", async () => {
-		console.log("reached");
-		app.log.debug("Server closing connections");
+		app.log.debug("2. Server closing connections");
 	});
 
 	app.io.on("connection", async (io) => {
@@ -42,9 +41,9 @@ async function main() {
 	await server.listen({ port: env.PORT, host: env.HOST });
 
 	closeWithGrace({ delay: 2000 }, async ({ signal }) => {
-		server.log.debug("Server closing", signal);
+		server.log.debug({ message: "1. Server closing", signal });
 		await server.close();
-		server.log.info("Server closed successfully");
+		server.log.info("3. Server closed successfully");
 	});
 }
 
