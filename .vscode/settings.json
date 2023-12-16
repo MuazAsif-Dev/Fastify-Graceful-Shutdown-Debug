@@ -1,0 +1,11 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"prettier.ignorePath": ".gitignore",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit"
+	},
+	"eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"typescript.tsdk": "./node_modules/typescript/lib"
+}
